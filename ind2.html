@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Resume Analysis Results</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            padding: 20px;
+            background-color: #F0FFF0;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .result-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .result-section p {
+            font-size: 1.1em;
+            color: #555;
+            margin: 10px 0;
+        }
+        .result-section p:first-child {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        ul li {
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+        .unmatched-skills ul {
+            color: #F08080; /* Light coral for unmatched skills */
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #2c3e50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #1a252f;
+        }
+    </style>
+</head>
+<body>
+    <h1>ATS Resume Analysis Results</h1>
+    <div class="result-section">
+        <p><strong>ATS Score:</strong> {{ ats_score }}%</p>
+        <p><strong>Job Title:</strong> {{ job_title }}</p>
+        <p><strong>Career Objective:</strong> {{ career_objective }}</p>
+        <p><strong>Matched Skills:</strong></p>
+        <ul>
+            {% for skill in matched_skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+        <div class="unmatched-skills">
+            <p><strong>Unmatched Skills:</strong></p>
+            <ul>
+                {% for skill in unmatched_skills %}
+                    <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <a href="/">Go Back to Upload Page</a>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATS Resume Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            height:100px;
+background-color:#fdffb6;
+
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            width: 50%;
+            margin: 0 auto;
+        }
+        input[type="file"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+       .bg-container{
+                   border-top-left-radius:5px;
+          border-top-right-radius:5px;
+          border-bottom-left-radius:5px;
+          border-bottom-right-radius:5px;
+          width:100%;
+
+       }
+
+    </style>
+</head>
+<body>
+    <div class="bg-container">
+    <h1>ATS Resume Analyzer</h1>
+    <form id="resume-form" enctype="multipart/form-data" action="/process_resume" method="POST">
+        <label for="resume">Upload Resume (PDF):</label>
+        <input type="file" id="resume" name="resume" accept=".pdf" required>
+        
+        <label for="job-description">Enter Job Description:</label>
+        <textarea id="job-description" name="job-description" rows="6" required></textarea>
+        
+        <input style="margin-left:37%" type="submit" value="Analyze Resume">
+    </form>
+   </div>
+</body>
+</html>
